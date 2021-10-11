@@ -89,8 +89,9 @@ class _LoginState extends State<Login> {
 
   Widget ButtomSignUp() {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.8,
-      child: ElevatedButton(
+      decoration: BoxDecoration(color: Colors.green, borderRadius: BorderRadius.circular(10)),
+      width: MediaQuery.of(context).size.width * 0.4,
+      child: TextButton(
           onPressed: () {},
           child: Center(
               child: Text("Criar nova conta",
