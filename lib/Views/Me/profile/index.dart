@@ -1,3 +1,4 @@
+import '../../../Route/index.dart';
 import '../../../states/App_StateLogin.dart';
 import 'package:flutter/material.dart';
 
@@ -66,7 +67,7 @@ class Profile extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: ()=> Navigator.pushNamed(context, Rotas.AppMe[1]),
           icon: Icon(Icons.arrow_back),
         ),
         title: Text("${Authenticate.instace.UserName}"),
