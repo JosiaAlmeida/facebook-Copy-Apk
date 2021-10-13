@@ -1,6 +1,7 @@
 import 'package:facebookcopy/Views/Me/feed/index.dart';
 import 'package:facebookcopy/Views/Me/message/index.dart';
 import 'package:facebookcopy/Views/Me/newfriend/index.dart';
+import 'package:facebookcopy/Views/Me/notify/index.dart';
 import 'package:flutter/material.dart';
 
 class Me extends StatelessWidget {
@@ -31,7 +32,7 @@ class Me extends StatelessWidget {
           Feed(),
           AddFriend(),
           Message(),
-          Feed(),
+          Notify(),
         ],),
       ),
     );
