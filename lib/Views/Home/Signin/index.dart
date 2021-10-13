@@ -24,7 +24,9 @@ class _LoginState extends State<Login> {
         Container(
           height: 40.0,
           child: TextField(
-            onChanged: (value){
+            textAlign: TextAlign.start,
+            textAlignVertical: TextAlignVertical.top,
+            onChanged: (value) {
               setState(() {
                 user = value;
               });
@@ -50,8 +52,18 @@ class _LoginState extends State<Login> {
         ),
         Container(
           height: 40.0,
-          child: TextField(
+          child: TextFormField(
+            textAlign: TextAlign.start,
+            textAlignVertical: TextAlignVertical.top,
             obscureText: !showPassword,
+            validator: (value) {
+              if (value!.length < 3) {
+                return "Senha muito curta";
+              }
+              if (value.isEmpty) {
+                return "Senha Vazia";
+              }
+            },
             decoration: InputDecoration(
                 hintStyle: TextStyle(
                   fontSize: 18,
@@ -82,14 +94,14 @@ class _LoginState extends State<Login> {
             Navigator.pushNamed(context, Rotas.AppMe[0]);
           },
           child: Center(
-              child: Text("Entrar",
-                  style: TextStyle(color: Colors.white)))),
+              child: Text("Entrar", style: TextStyle(color: Colors.white)))),
     );
   }
 
   Widget ButtomSignUp() {
     return Container(
-      decoration: BoxDecoration(color: Colors.green, borderRadius: BorderRadius.circular(10)),
+      decoration: BoxDecoration(
+          color: Colors.green, borderRadius: BorderRadius.circular(10)),
       width: MediaQuery.of(context).size.width * 0.4,
       child: TextButton(
           onPressed: () {},
@@ -99,8 +111,11 @@ class _LoginState extends State<Login> {
     );
   }
 
-  Widget ForgetPassword(){
-    return Text("Esqueceu a senha?", style: TextStyle(color: Colors.blue),);
+  Widget ForgetPassword() {
+    return Text(
+      "Esqueceu a senha?",
+      style: TextStyle(color: Colors.blue),
+    );
   }
 
   @override
@@ -116,9 +131,14 @@ class _LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            EmailNumber(),
-            PassWordText(),
-            Center(child: ButtomEntry(context)),
+            Form(
+                child: Column(
+              children: [
+                EmailNumber(),
+                PassWordText(),
+                Center(child: ButtomEntry(context)),
+              ],
+            )),
             ForgetPassword(),
             SizedBox(
               height: 10,
