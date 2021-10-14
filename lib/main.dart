@@ -1,4 +1,6 @@
 import 'package:facebookcopy/Views/Me/index.dart';
+import 'package:facebookcopy/Views/Me/menu/index.dart';
+import 'package:facebookcopy/Views/components/PublicForm.dart';
 import 'package:facebookcopy/states/App_StateLogin.dart';
 
 import './Route/index.dart';
@@ -27,6 +29,8 @@ class MyApp extends StatelessWidget {
               Rotas.AppLogin: (_) => Login(),
               Rotas.AppMe[0]: (_) => Me(),
               Rotas.AppMe[1]: (_) => Profile(),
+              Rotas.AppMe[2]: (_) => PublicForm(), 
+              Rotas.AppMe[5]: (_) => Menu(),
             },
           );
         });

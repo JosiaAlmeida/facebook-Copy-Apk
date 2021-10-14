@@ -1,12 +1,15 @@
+import 'package:facebookcopy/Route/index.dart';
 import 'package:facebookcopy/Views/Me/feed/index.dart';
 import 'package:facebookcopy/Views/Me/message/index.dart';
 import 'package:facebookcopy/Views/Me/newfriend/index.dart';
 import 'package:facebookcopy/Views/Me/notify/index.dart';
+import 'package:facebookcopy/Views/components/PublicForm.dart';
+import 'package:facebookcopy/states/App_StateLogin.dart';
 import 'package:flutter/material.dart';
 
 class Me extends StatelessWidget {
-  const Me({Key? key}) : super(key: key);
-
+  Me({Key? key}) : super(key: key);
+  final state = Authenticate.instace;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -17,7 +20,7 @@ class Me extends StatelessWidget {
           title: Text("facebook", style: TextStyle(fontSize: 20),),
           actions: [
             IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.more_horiz))
+            IconButton(onPressed: () => Navigator.pushNamed(context, Rotas.AppMe[5]), icon: Icon(Icons.more_horiz))
           ],
           bottom: TabBar(
             tabs: [

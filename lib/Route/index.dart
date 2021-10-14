@@ -3,7 +3,7 @@ class Rotas {
   static List<String> AppMe = [
     'Me',
     'profile',
-    'feed',
+    'public',
     'newfriend',
     'notify',
     'menu',
